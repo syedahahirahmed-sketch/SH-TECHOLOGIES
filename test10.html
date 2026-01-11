@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SH TECHNOLOGIES | Sales, Service & Accessories</title>
+    <style>
+        :root {
+            --bg: #030303;
+            --card: rgba(18, 18, 18, 0.9);
+            --accent: #00ff88;
+            --text: #ffffff;
+            --muted: #a0a0a0;
+        }
+
+        /* Animated Background & Cyber Grid */
+        body { 
+            background-color: var(--bg); color: var(--text); margin: 0;
+            font-family: 'Segoe UI', sans-serif; overflow-x: hidden;
+            background: linear-gradient(45deg, #050505 25%, #0a0a0a 50%, #050505 75%);
+            background-size: 400% 400%; animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px; pointer-events: none; z-index: 0;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        header { 
+            background: rgba(0,0,0,0.95); padding: 1rem 5%; display: flex; 
+            justify-content: space-between; align-items: center; position: sticky; 
+            top: 0; z-index: 1000; border-bottom: 1px solid #00ff8833; backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 1.6rem; font-weight: 900; color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+
+        .section { padding: 4rem 5%; position: relative; z-index: 1; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; text-transform: uppercase; font-weight: 900; }
+        .section-title span { color: var(--accent); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        /* Multi-Category Cards */
+        .card { 
+            background: var(--card); border: 1px solid #333; border-radius: 15px; 
+            overflow: hidden; transition: 0.4s; backdrop-filter: blur(5px); display: flex; flex-direction: column;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); }
+        .img-box { height: 180px; background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; padding: 15px; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .content { padding: 1.5rem; text-align: center; flex-grow: 1; }
+        .price { font-size: 1.5rem; color: var(--accent); font-weight: bold; margin: 10px 0; }
+        .btn { 
+            width: 100%; padding: 12px; background: var(--accent); color: #000; 
+            border: none; font-weight: 900; border-radius: 5px; cursor: pointer; transition: 0.3s;
+        }
+
+        /* Customer Details / Testimonials */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .t-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid var(--accent); }
+        .t-name { color: var(--accent); font-weight: bold; font-size: 1rem; margin-bottom: 5px; display: block; }
+        .t-detail { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+
+        /* Software Tags */
+        .tag-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+        .tag { padding: 5px 15px; border: 1px solid var(--accent); border-radius: 50px; font-size: 0.75rem; color: var(--accent); }
+
+        footer { background: #000; padding: 4rem 5%; text-align: center; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SH TECHNOLOGIES</div>
+    <nav>
+        <a href="#pcs">PC Builds</a>
+        <a href="#laptops">Laptops</a>
+        <a href="#accessories">Gear</a>
+        <a href="#reviews">Customers</a>
+        <a href="tel:9845074321" style="color:var(--accent)">9845074321</a>
+    </nav>
+</header>
+
+<section id="pcs" class="section">
+    <h2 class="section-title">Performance <span>PCs</span></h2>
+    <div class="grid">
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content">
+                <h3>Vanguard Starter</h3>
+                <p>i3-12th Gen | 16GB RAM | GTX 1650</p>
+                <div class="price">₹42,000</div>
+                <button class="btn" onclick="location.href='tel:9845074321'">Call to Order</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content">
+                <h3>Titan 4K Beast</h3>
+                <p>i9-14th Gen | 64GB DDR5 | RTX 4090</p>
+                <div class="price">₹3,95,000</div>
+                <button class="btn" onclick="location.href='tel:9845074321'">Consultation</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="laptops" class="section" style="background: rgba(0,0,0,0.3);">
+    <h2 class="section-title">Laptops & <span>Power</span></h2>
+    <div class="grid">
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content">
+                <h3>Gaming Laptop Pro</h3>
+                <p>i7 13th Gen | RTX 4060 | 144Hz</p>
+                <div class="price">₹84,500</div>
+                <button class="btn" onclick="location.href='tel:9845074321'">Buy Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content">
+                <h3>Universal Chargers</h3>
+                <p>65W / 90W for all major brands</p>
+                <div class="price">₹1,200</div>
+                <button class="btn" onclick="location.href='tel:9845074321'">Order</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="accessories" class="section">
+    <h2 class="section-title">Premium <span>Accessories</span></h2>
+    <div class="grid">
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content"><h3>24" 165Hz Monitor</h3><div class="price">₹11,499</div></div>
+        </div>
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1616533753435-076193798579?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content"><h3>RGB XL Mouse Pad</h3><div class="price">₹850</div></div>
+        </div>
+        <div class="card">
+            <div class="img-box"><img src="https://images.unsplash.com/photo-1615807716794-688fbd926588?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="content"><h3>7-in-1 USB Hub</h3><div class="price">₹1,850</div></div>
+        </div>
+    </div>
+</section>
+
+<section id="reviews" class="section" style="background: rgba(0,0,0,0.3);">
+    <h2 class="section-title">Verified <span>Customer Success</span></h2>
+    <div class="testimonial-grid">
+        <div class="t-card">
+            <span class="t-name">Aditya R.</span>
+            <p class="t-detail">"Bought a custom gaming PC for streaming. Cable management is clean and performance is top-notch. Highly recommend SH Technologies!"</p>
+            <div style="color:var(--accent); margin-top:10px;">Build: RTX 4070 Setup</div>
+        </div>
+        <div class="t-card">
+            <span class="t-name">Sarah Khan</span>
+            <p class="t-detail">"Fixed my laptop screen and battery on the same day. Very honest pricing and fast service in Bengaluru."</p>
+            <div style="color:var(--accent); margin-top:10px;">Service: Laptop Repair</div>
+        </div>
+        <div class="t-card">
+            <span class="t-name">Rajesh Kumar</span>
+            <p class="t-detail">"The best place for original chargers and accessories. The RGB mousepad is great quality."</p>
+            <div style="color:var(--accent); margin-top:10px;">Purchase: Accessories</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div style="background: rgba(0,0,0,0.6); padding: 3rem; border-radius: 15px; border: 1px solid var(--accent); text-align: center;">
+        <h2 style="color: var(--accent);">Complete Software & Warranty</h2>
+        <p>All builds include original OS installation, drivers, and 3-Year Support.</p>
+        <div class="tag-box">
+            <span class="tag">Windows 11 Pro</span>
+            <span class="tag">Adobe Suite Ready</span>
+            <span class="tag">Gaming Driver Hub</span>
+            <span class="tag">3-Year Parts Warranty</span>
+            <span class="tag">Lifetime Tech Support</span>
+        </div>
+        <h2 style="margin-top: 2rem;">📞 Contact Us: 9845074321</h2>
+    </div>
+</section>
+
+<footer>
+    <div class="logo">SH TECHNOLOGIES</div>
+    <p>Bengaluru's Premier PC Store • Open 10:00 AM - 8:00 PM</p>
+    <p style="margin-top: 20px; font-size: 0.8rem; color: var(--muted);">Click to call for doorstep service.</p>
+</footer>
+
+</body>
+</html>
